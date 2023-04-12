@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
-import LeftNavMenuItem from "./LeftNavMenuItem";
+import LeftNavMenuItem from "./SidebarItem";
 import { categories } from "../utils/constants";
 import { Context } from "../context/contextApi";
 import { FiSettings } from "react-icons/fi";
@@ -13,7 +13,7 @@ import user4 from "../images/sidebar-4.png";
 
 import './leftnav.css'
 
-const LeftNav = () => {
+const Sidebar = () => {
   const { selectedCategory, setSelectedCategory, mobileMenu } =
     useContext(Context);
 
@@ -34,7 +34,7 @@ const LeftNav = () => {
 
   return (
     <div
-      className={`md:block w-[240px] overflow-y-auto h-full py-4 bg-black absolute md:relative z-10 translate-x-[-240px] md:translate-x-0 transition-all ${
+      className={`md:block w-[240px] overflow-y-auto h-full py-4 bg-white absolute md:relative z-10 translate-x-[-240px] md:translate-x-0 transition-all ${
         mobileMenu ? "translate-x-0" : ""
       }`}
     >
@@ -50,14 +50,14 @@ const LeftNav = () => {
                   navigate("/");
                 }}
                 className={`${
-                  selectedCategory === item.name ? "bg-white/[0.15]" : ""
+                  selectedCategory === item.name ? "" : ""
                 }`}
               />
-              {item.divider && <hr className="my-5 border-white/[0.2]" />}
+              {item.divider && <hr className="my-5" />}
             </React.Fragment>
           );
         })}
-        <div className="text-white px-3">
+        <div className="text-black px-3">
           <h1 className="my-1 text-[19px] font-bold mb-5">Subscriptions</h1>
           <ul>
             <li>
@@ -77,8 +77,8 @@ const LeftNav = () => {
               Eunice Cortez
             </li>
           </ul>
-        <hr className="my-5 border-white/[0.2]" />
-          <div className="text-white flex items-center gap-4 mt-5">
+        <hr className="my-5" />
+          <div className="text-black flex items-center gap-4 mt-5">
             <FiSettings />
             Setting
           </div>
@@ -88,4 +88,4 @@ const LeftNav = () => {
   );
 };
 
-export default LeftNav;
+export default Sidebar;

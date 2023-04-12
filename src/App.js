@@ -2,9 +2,9 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Header from "./components/Header";
-import Feed from "./components/Feed";
+import Home from "./components/Home";
 import SearchResult from "./components/SearchResult";
-import VideoDetails from "./components/VideoDetails";
+import VideoDetails from "./components/VideoPageCard";
 import { AppContext } from "./context/contextApi";
 
 const App = () => {
@@ -14,7 +14,7 @@ const App = () => {
         <div className="flex flex-col h-full">
           <Header />
           <Routes>
-            <Route path="/" exact element={<Feed />} />
+            <Route path="/" exact element={<Home />} />
             <Route
               path="/searchResult/:searchQuery"
               element={<SearchResult />}

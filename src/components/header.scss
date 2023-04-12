@@ -1,0 +1,24 @@
+.header {
+	position: sticky;
+	top: 0;
+	z-index: 999;
+	display: flex;
+	flex-direction: row;
+	background-color: white;
+	align-items: center;
+	justify-content: space-between;
+	height: 3.5rem;
+	padding-inline: 1rem;
+}
+
+@media (max-width: 768px) {
+	.header {
+		padding-inline: 1.25rem;
+	}
+}
+
+.mobileMenu {
+	display: flex;
+	height: 1.25rem;
+	align-items: center;
+}
